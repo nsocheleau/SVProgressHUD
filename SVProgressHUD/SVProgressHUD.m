@@ -35,7 +35,7 @@
 - (void)registerNotifications;
 - (void)moveToPoint:(CGPoint)newCenter rotateAngle:(CGFloat)angle;
 - (void)positionHUD:(NSNotification*)notification;
-
+- (void)setFadeOutTimer:(NSTimer *)newTimer;
 @end
 
 
@@ -44,7 +44,7 @@
 @synthesize overlayWindow, hudView, maskType, fadeOutTimer, stringLabel, imageView, spinnerView, visibleKeyboardHeight;
 
 - (void)dealloc {
-	self.fadeOutTimer = nil;
+	[self setFadeOutTimer:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
